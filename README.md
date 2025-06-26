@@ -3,7 +3,8 @@
 
 ### Features:
 - Just works out-of-the-box. Use *example.py* as a starting point
-- No external paqckage requirements - just Python 3.x
+- No additional packages required - just Python 3.x
+- Supports multiply concurrent clients
 - Thread safe
 ### Prerequisites:
 - python 3.x
@@ -18,7 +19,7 @@ Cause2: NatNetClient.py depacketization error or network error</br>
 Solution: Restart the script</br></br>
 Error: Partial or empty tracking list</br>
 Cause: Internal depacketization error or network error</br>
-Solution: Restart the script</br></br>
+Solution: Restart the script. Make sure to call shutdown()</br></br>
 Error: Everything works but your object is not being tracked</br>
 Cause: Object not tracked by Motive or mismatch of string name or int ID</br>
 Solution: Verify setting in Motive
