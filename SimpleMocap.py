@@ -8,7 +8,7 @@ import logging
 
 from NatNetClient import NatNetClient
 import DataDescriptions
-from asset import Asset
+from Asset import Asset
 
 logger = logging.getLogger()
 

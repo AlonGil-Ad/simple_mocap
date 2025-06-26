@@ -1,5 +1,5 @@
 # Simple MoCap
-## A simple Python client for the OptiTrack MoCap System<br/>
+## A simple Python client for OptiTrack MoCap<br/>
 
 ### Features:
 - Just works out-of-the-box. Use *example.py* as a starting point
