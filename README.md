@@ -24,10 +24,7 @@ Cause: Object not tracked by Motive or mismatch of string name or int ID</br>
 Solution: Verify setting in Motive
 
 ### Notice:
-Uses OptiTrack NatNet direct depacketization library for Python 3.x
-https://optitrack.com/support/downloads/developer-tools.html
+Uses OptiTrack NatNet direct depacketization library for Python 3.x</br>
+https://optitrack.com/support/downloads/developer-tools.html</br>
 Some nessesary modifications were made to NatNetClient.py and commented *(Alon Gil-Ad)*.<br/>
 Original script included and renamed "NatNetClient-original.py".
-
-
-
