@@ -4,7 +4,7 @@
 ### Features:
 - Just works out-of-the-box. Use *example.py* as a starting point
 - No additional packages required - just Python 3.x
-- Supports multiply concurrent clients
+- Supports multiple concurrent clients
 - Thread safe
 ### Prerequisites:
 - python 3.x
