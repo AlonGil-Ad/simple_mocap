@@ -59,13 +59,18 @@ class SimpleMocap:
         for a in self._assets:
             logger.debug(f'{a}')
 
-    # Returns ((position), (rotation))
+    # Returns ((x, y, z), (qx, qy, qz, qw))
     # asset can be string name or ID int as defined in Motive
     def get_location(self, asset):
-        if not asset in self._assets:
+        try:
+            a = next(a for a in self._assets if a == asset)
+            if not a.is_tracking_valid():
+                logger.warning(f'Tracking for {asset} is invalid')
+                return None
+            return a.get_location()
+        except StopIteration:       # asset not in assets and isn't being tracked
             logger.warning(f'{asset} is not being tracked')
             return None
-        return next(a for a in self._assets if a == asset).get_location()
 
     # Get frame number of current session
     def get_frame_number(self) -> int:
