@@ -41,14 +41,13 @@ class Asset:
             self._position = None
             self._rotation = None
 
+    # Tracking is invalid if the minimum number of markers, as set in Motive, is not seen by the cameras
     def is_tracking_valid(self):
         with self._mutex:
             return self._tracking_valid
 
     def __eq__(self, other):
-        # print(f'{other} of type {type(other)}')
         if isinstance(other, Asset):
-            # print(f'{other} is type(Asset)')
             if other.get_id_num() == self.get_id_num() and other.get_name() == self.get_name():
                 return True
             else:
@@ -68,7 +67,3 @@ class Asset:
     def __str__(self):
         return (f'Name: {self.get_name()}, ' +
                 f'ID: {self.get_id_num()}')
-                # f'ID: {self.get_id_num()}, ' +
-                # f'tracking {"is valid" if self.is_tracking_valid() else "invalid"}')
-
-
