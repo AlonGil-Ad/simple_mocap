@@ -31,7 +31,7 @@ Error: Partial or empty tracking list</br>
 Cause: Internal depacketization error or network error</br>
 Solution: Restart the script. Make sure to call shutdown()</br></br>
 Error: Everything works but your object is not being tracked</br>
-Cause: Object not tracked by Motive or mismatch of string name or int ID</br>
+Cause: Object not tracked by Motive or mismatch of String name or Integer ID</br>
 Solution: Verify setting in Motive
 
 ### Notice:
