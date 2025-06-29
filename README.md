@@ -14,9 +14,9 @@ Instantiate SimpleMocap with local IP address (your machine) and server IP addre
 Call get_location(asset) to get the position and rotation of a rigid body by either the String name or Integer ID as defined in Motive.
 Return value is a Tuple of the position Tuple and the quaternion rotation Tuple:</br>
 ((x, y, z), (qx, qy, qz, qw))</br>
-Tracking invalid means that the minimum number of markers as defined in Motive isn't being seen by the cameras.
+Tracking invalid means that the minimum number of markers as defined in Motive isn't being seen by the cameras.</br>
 If a rigid body isn't being tracked then it's not marked for tracking in Motive.</br>
-get_frame_number() returns the frame number of the current client session.
+get_frame_number() returns the frame number of the current client session.</br>
 get_system_frame_number() returns the frame number of Motive. It resets when the stream starts.
 ### Troubleshooting:
 Error: *OSError: [Errno 19] No such device*</br>
