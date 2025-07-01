@@ -29,8 +29,8 @@ import time
 # Import fixes (Alon Gil-Ad)
 # import DataDescriptions
 # import MoCapData
-from simple_mocap import DataDescriptions
-from simple_mocap import MoCapData
+from . import DataDescriptions
+from . import MoCapData
 
 def trace(*args):
     # uncomment the one you want to use
