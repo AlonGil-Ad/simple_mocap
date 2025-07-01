@@ -26,9 +26,11 @@ import struct
 from threading import Thread
 import copy
 import time
-import DataDescriptions
-import MoCapData
-
+# Import fixes (Alon Gil-Ad)
+# import DataDescriptions
+# import MoCapData
+from simple_mocap import DataDescriptions
+from simple_mocap import MoCapData
 
 def trace(*args):
     # uncomment the one you want to use

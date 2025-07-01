@@ -6,9 +6,9 @@
 from time import sleep
 import logging
 
-from NatNetClient import NatNetClient
-import DataDescriptions
-from Asset import Asset
+from simple_mocap.natnet_client import NatNetClient
+from simple_mocap import DataDescriptions
+from simple_mocap.Asset import Asset
 
 logger = logging.getLogger()
 
@@ -50,7 +50,7 @@ class SimpleMocap:
                     a.set_location(rb.pos, rb.rot)
 
     # Callback for tracked object description
-    def __receive_new_data_description(self, data_desc: DataDescriptions.DataDescriptions):
+    def __receive_new_data_description(self, data_desc: DataDescriptions):
         logger.debug(f'SimpleMocap: received Data Descriptions')
         for rb in data_desc.rigid_body_list:
             if rb.id_num not in self._assets:

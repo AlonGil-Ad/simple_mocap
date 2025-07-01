@@ -5,7 +5,7 @@
 
 import logging
 from time import sleep
-from SimpleMocap import SimpleMocap
+from simple_mocap import SimpleMocap
 
 if __name__ == "__main__":
     # Optional logger usage. The client inherits the root logger.
