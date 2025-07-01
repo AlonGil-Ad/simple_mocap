@@ -9,7 +9,11 @@
 ### Prerequisites:
 - python>=3.9
 ### Installation
->pip install git+https://github.com/AlonGil-Ad/simple_mocap
+Install using pip:
+```bash
+pip install git+https://github.com/AlonGil-Ad/simple_mocap
+```
+
 ### Quick start:
 Use *example.py* as a starting point.</br>
 Instantiate SimpleMocap with local IP address (your machine) and server IP address (the machine that runs Motive).
