@@ -6,9 +6,9 @@
 from time import sleep
 import logging
 
-from simple_mocap.natnet_client import NatNetClient
-from simple_mocap import DataDescriptions
-from simple_mocap.Asset import Asset
+from .NatNetClient import NatNetClient
+from . import DataDescriptions
+from .Asset import Asset
 
 logger = logging.getLogger()
 
