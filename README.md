@@ -3,11 +3,13 @@
 
 ### Features:
 - Just works out-of-the-box
-- No additional packages required - just Python 3.x
+- No additional packages required - just Python 3.9+
 - Supports multiple concurrent clients
 - Thread safe
 ### Prerequisites:
-- python 3.x
+- python>=3.9
+### Installation
+>pip install git+https://github.com/AlonGil-Ad/simple_mocap
 ### Quick start:
 Use *example.py* as a starting point.</br>
 Instantiate SimpleMocap with local IP address (your machine) and server IP address (the machine that runs Motive).
@@ -33,7 +35,10 @@ Solution: Restart the script. Make sure to call shutdown()</br></br>
 Error: Everything works but your object is not being tracked</br>
 Cause: Object not tracked by Motive or mismatch of String name or Integer ID</br>
 Solution: Verify setting in Motive
-
+### Note:
+Python 3.9 and above is required for some Logger declarations (specifically the *encoding* keyword).</br>
+If you absolutely must use a lower version of Python, just remove Logging and replace it with *print* where needed.</br>
+The client itself should run on Python=3.x (not tested)
 ### Notice:
 Uses OptiTrack NatNet direct depacketization library for Python 3.x</br>
 https://optitrack.com/support/downloads/developer-tools.html</br>
