@@ -13,6 +13,9 @@ from .Asset import Asset
 logger = logging.getLogger()
 
 class SimpleMocap:
+    """
+
+    """
     _assets = []                # List of tracked assets
     _streaming_client = None    # NatNet client
     _frame_no: int = 0          # Frame count for this client
@@ -33,7 +36,7 @@ class SimpleMocap:
         self._streaming_client.run("c")
         self._streaming_client.request_data_descriptions()
 
-        # Wait a while for the system to start transmitting. Increase on low network performance
+        # Wait a while for the system to start transmitting. Increase for low performance networks
         sleep(1)
 
     # Callback for frame data
@@ -59,9 +62,12 @@ class SimpleMocap:
         for a in self._assets:
             logger.debug(f'{a}')
 
-    # Returns ((x, y, z), (qx, qy, qz, qw))
-    # asset can be string name or ID int as defined in Motive
     def get_location(self, asset):
+        """
+        Return the location of the given rigid body
+        :param asset: str Name or int ID as defined in Motive
+        :return: location in ((x, y, z), (qx, qy, qz, qw)) or None if tracking invalid or body not being tracked
+        """
         try:
             a = next(a for a in self._assets if a == asset)
             if not a.is_tracking_valid():
@@ -72,21 +78,27 @@ class SimpleMocap:
             logger.warning(f'{asset} is not being tracked')
             return None
 
-    # Get frame number of current session
     def get_frame_number(self) -> int:
+        """
+        Gets the frame number of the current session (as counted by the client)
+        :return: int frame number
+        """
         return self._frame_no
 
-    # Get server's frame number. Resets on Motive relaunch
     def get_system_frame_number(self) -> int:
+        """
+        Gets the frame number from Motive (restarts when Motive restarts)
+        :return: int frame number
+        """
         return self._server_frame_no
 
     # Orderly shutdown - important!
     def shutdown(self):
+        """
+        Shuts down the system. Failure to call this method could cause errors on subsequent use
+        :return None
+        """
         if self._streaming_client is not None:
             logger.info(f'SimpleMocap: shutting down')
             self._streaming_client.shutdown()
             self._streaming_client = None
-
-
-
-
