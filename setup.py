@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="simple_mocap",
-    version="0.1.0",
+    version="0.1.1",
     author="Alon Gil-Ad",
     author_email="a10n@technion.ac.il",
     description="A simple Python client for OptiTrack MoCap",
